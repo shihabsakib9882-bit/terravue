@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 Katha residential plot, Bashundhara — Terravue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .detail-layout { display: grid; grid-template-columns: 1fr 340px; gap: var(--spacing-48); padding-bottom: var(--spacing-64); align-items: start; }
+  .gallery-main { border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 16/9; }
+  .gallery-main img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-8); margin-top: var(--spacing-8); }
+  .gallery-thumbs img { border-radius: var(--radius-sm); aspect-ratio: 4/3; object-fit: cover; border: 2px solid transparent; cursor: pointer; }
+  .gallery-thumbs img.active { border-color: var(--color-accent); }
+  .detail-head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--spacing-16); margin: var(--spacing-24) 0 var(--spacing-8); flex-wrap: wrap; }
+  .detail-title { font-family: var(--font-heading); font-weight: var(--font-semibold); font-size: var(--text-2xl); margin: 0 0 var(--spacing-4); }
+  .detail-location { color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0; }
+  .detail-price { font-family: var(--font-heading); font-weight: var(--font-semibold); font-size: var(--text-2xl); white-space: nowrap; }
+  .facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-16); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-24); margin: var(--spacing-24) 0; }
+  .fact dt { font-size: var(--text-xs); color: var(--color-text-muted); margin: 0 0 var(--spacing-4); text-transform: uppercase; letter-spacing: 0.02em; }
+  .fact dd { font-size: var(--text-base); font-weight: var(--font-medium); margin: 0; }
+  .verify-block { background: var(--color-verified-bg); border: 1px solid #B9DDCD; border-radius: var(--radius-md); padding: var(--spacing-24); margin: var(--spacing-24) 0; }
+  .verify-block h3 { margin: 0 0 var(--spacing-8); color: var(--color-verified); font-size: var(--text-lg); display: flex; align-items: center; gap: var(--spacing-8); }
+  .verify-list { margin: var(--spacing-12) 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--spacing-8); }
+  .verify-list li { display: flex; gap: var(--spacing-8); font-size: var(--text-sm); align-items: flex-start; }
+  .verify-list svg { width: 16px; height: 16px; color: var(--color-verified); flex-shrink: 0; margin-top: 2px; }
+  .doc-list { list-style: none; margin: var(--spacing-16) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--spacing-8); }
+  .doc-item { display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-12) var(--spacing-16); border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: var(--color-surface); font-size: var(--text-sm); }
+  .doc-item .doc-name { display: flex; align-items: center; gap: var(--spacing-8); }
+  .doc-item svg.doc-icon { width: 18px; height: 18px; color: var(--color-text-secondary); }
+  .doc-link { color: var(--color-accent); font-weight: var(--font-medium); font-size: var(--text-sm); }
+  .sidebar-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-24); position: sticky; top: 84px; }
+  .sidebar-price { font-family: var(--font-heading); font-weight: var(--font-semibold); font-size: var(--text-2xl); margin: 0 0 var(--spacing-4); }
+  .sidebar-note { font-size: var(--text-sm); color: var(--color-text-muted); margin: 0 0 var(--spacing-24); }
+  .sidebar-actions { display: flex; flex-direction: column; gap: var(--spacing-12); }
+  .agent-row { display: flex; align-items: center; gap: var(--spacing-12); margin-top: var(--spacing-24); padding-top: var(--spacing-24); border-top: 1px solid var(--color-border); }
+  .agent-avatar { width: 40px; height: 40px; border-radius: var(--radius-full); object-fit: cover; }
+  .agent-name { font-size: var(--text-sm); font-weight: var(--font-semibold); margin: 0; }
+  .agent-role { font-size: var(--text-xs); color: var(--color-text-muted); margin: 0; }
+  .desc-body p { font-size: var(--text-base); color: var(--color-text-secondary); line-height: var(--leading-relaxed); }
+  @media (max-width: 900px) {
+    .detail-layout { grid-template-columns: 1fr; }
+    .sidebar-card { position: static; }
+    .facts-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="wordmark">Terravue</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link active" href="explore.html">Explore</a>
+        <a class="nav-link" href="#development">Development</a>
+        <a class="btn-signin" href="login.html">Sign in</a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </label>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <p class="breadcrumb" style="margin-top: var(--spacing-24);"><a href="explore.html">Explore</a> / Bashundhara R/A / 3 Katha residential plot</p>
+
+      <div class="detail-layout">
+        <div>
+          <div class="gallery-main">
+            <img id="gallery-main-img" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1400&auto=format&fit=crop" alt="3 Katha residential plot in Bashundhara R/A, main view">
+          </div>
+          <div class="gallery-thumbs">
+            <img class="active" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=300&auto=format&fit=crop" alt="Plot main view thumbnail">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=300&auto=format&fit=crop&crop=left" alt="Access road thumbnail, view toward the corner">
+            <img style="transform: scaleX(-1);" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=300&auto=format&fit=crop&crop=right" alt="Corner boundary thumbnail">
+            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=300&auto=format&fit=crop" alt="Neighbouring plots thumbnail">
+          </div>
+
+          <div class="detail-head">
+            <div>
+              <h1 class="detail-title">3 Katha residential plot</h1>
+              <p class="detail-location">Road 4, Block J, Bashundhara R/A, Dhaka</p>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:flex-end; gap:var(--spacing-8);">
+              <span class="detail-price">৳48,50,000</span>
+              <span class="badge badge-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Verified</span>
+            </div>
+          </div>
+
+          <dl class="facts-grid">
+            <div class="fact"><dt>Plot size</dt><dd>3 Katha (2,160 sq ft)</dd></div>
+            <div class="fact"><dt>Road width</dt><dd>25 ft</dd></div>
+            <div class="fact"><dt>Facing</dt><dd>South-east corner</dd></div>
+            <div class="fact"><dt>Land type</dt><dd>Residential</dd></div>
+            <div class="fact"><dt>Ownership</dt><dd>Individual, single owner</dd></div>
+            <div class="fact"><dt>Listed</dt><dd>19 Aug 2026</dd></div>
+          </dl>
+
+          <div class="verify-block">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+              Verified by Terravue
+            </h3>
+            <p style="margin:0; font-size:var(--text-sm); color:var(--color-text-secondary);">Checked by our documentation team on 26 Aug 2026. Verification covers ownership and paperwork only — always inspect the plot in person before paying anything.</p>
+            <ul class="verify-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Ownership matches the deed holder's name</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Mutation record up to date at the local land office</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>No pending litigation found against this plot as of check date</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Property tax paid through FY 2025–26</li>
+            </ul>
+          </div>
+
+          <div class="desc-body">
+            <h3 style="font-family:var(--font-heading); font-size:var(--text-lg);">Description</h3>
+            <p>Corner plot on a 25 ft road inside Block J, walking distance to the main Bashundhara approach road. Seller mentions the boundary wall on the south side was rebuilt in 2024 after a dispute with the adjacent plot owner over a shared drain — since resolved and reflected in the current mutation record. Electricity and gas lines run along the road; individual gas connection would need a separate application to Titas after purchase. No existing structure on the plot.</p>
+          </div>
+
+          <div>
+            <h3 style="font-family:var(--font-heading); font-size:var(--text-lg); margin-bottom: var(--spacing-8);">Documents</h3>
+            <ul class="doc-list">
+              <li class="doc-item">
+                <span class="doc-name"><svg class="doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Deed copy (registered)</span>
+                <a class="doc-link" href="#">View</a>
+              </li>
+              <li class="doc-item">
+                <span class="doc-name"><svg class="doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Mutation certificate</span>
+                <a class="doc-link" href="#">View</a>
+              </li>
+              <li class="doc-item">
+                <span class="doc-name"><svg class="doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Tax receipt, FY 2025–26</span>
+                <a class="doc-link" href="#">View</a>
+              </li>
+              <li class="doc-item">
+                <span class="doc-name" style="color:var(--color-text-muted);"><svg class="doc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>Survey (RS) map — released after enquiry accepted</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="sidebar-card">
+          <p class="sidebar-price">৳48,50,000</p>
+          <p class="sidebar-note">≈ ৳22,453 per sq ft. Price is asking price, negotiable per seller.</p>
+          <div class="sidebar-actions">
+            <a class="btn btn-primary btn-block" href="purchase-review.html">Start purchase</a>
+            <a class="btn btn-secondary btn-block" href="enquiry.html">Send an enquiry</a>
+            <button class="btn btn-secondary btn-block" type="button" onclick="this.textContent = this.textContent === 'Save property' ? 'Saved' : 'Save property'">Save property</button>
+          </div>
+          <div class="agent-row">
+            <img class="agent-avatar" src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?q=80&w=100&auto=format&fit=crop" alt="Photo of Fahim Islam, Terravue documentation lead">
+            <div>
+              <p class="agent-name">Fahim Islam</p>
+              <p class="agent-role">Documentation lead, verified this listing</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="wordmark">Terravue</a>
+          <p class="footer-tagline">A trusted property platform for Dhaka — verification earned before purchase, and a straight path from buying land to building on it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="explore.html">Browse properties</a></li>
+            <li><a href="explore.html">Verified listings</a></li>
+            <li><a href="#development">Start a development</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign in</a></li>
+            <li><a href="enquiry.html">Send an enquiry</a></li>
+            <li><a href="purchase-review.html">Start a purchase</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Terravue</a></li>
+            <li><a href="#">How verification works</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Terravue — Dhaka, Bangladesh</p>
+        <p>Case study by Shihab</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.gallery-thumbs img').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        document.getElementById('gallery-main-img').src = thumb.src.replace('w=300', 'w=1400');
+        document.querySelectorAll('.gallery-thumbs img').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

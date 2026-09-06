@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in — Terravue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .auth-wrap { max-width: 620px; margin: var(--spacing-64) auto; padding: 0 var(--spacing-24); }
+  .auth-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-64) var(--spacing-64); }
+  .auth-title { font-family: var(--font-heading); font-size: var(--text-3xl); margin: 0 0 var(--spacing-12); text-align: center; }
+  .auth-sub { text-align: center; color: var(--color-text-secondary); font-size: var(--text-base); margin: 0 0 var(--spacing-32); }
+  .auth-foot { text-align: center; font-size: var(--text-sm); margin-top: var(--spacing-16); color: var(--color-text-secondary); }
+  .pw-wrap { position: relative; }
+  .pw-toggle { position: absolute; right: var(--spacing-12); top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--color-text-muted); }
+  @media (max-width: 640px) {
+    .auth-card { padding: var(--spacing-32) var(--spacing-24); }
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container"><a href="index.html" class="wordmark">Terravue</a></div>
+  </header>
+  <main>
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-sub">Sign in to continue a purchase or check your saved properties.</p>
+        <div class="field">
+          <label for="email">Email or phone number</label>
+          <input type="text" id="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="pw">Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="pw" placeholder="••••••••">
+            <button class="pw-toggle" type="button" aria-label="Show password" onclick="const i=document.getElementById('pw'); i.type = i.type==='password' ? 'text' : 'password';">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <a class="btn btn-primary btn-block" href="explore.html">Sign in</a>
+        <p class="auth-foot">New here? <a href="#" style="color:var(--color-accent); font-weight:var(--font-medium);">Create an account</a></p>
+      </div>
+    </div>
+  </main>
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="wordmark">Terravue</a>
+          <p class="footer-tagline">A trusted property platform for Dhaka — verification earned before purchase, and a straight path from buying land to building on it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="explore.html">Browse properties</a></li>
+            <li><a href="explore.html">Verified listings</a></li>
+            <li><a href="#development">Start a development</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign in</a></li>
+            <li><a href="enquiry.html">Send an enquiry</a></li>
+            <li><a href="purchase-review.html">Start a purchase</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Terravue</a></li>
+            <li><a href="#">How verification works</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Terravue — Dhaka, Bangladesh</p>
+        <p>Case study by Shihab</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

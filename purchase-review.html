@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review purchase — Terravue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .purchase-layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--spacing-48); padding: var(--spacing-32) 0 var(--spacing-64); align-items: start; }
+  .breakdown { margin: var(--spacing-24) 0; }
+  .breakdown-row { display: flex; justify-content: space-between; padding: var(--spacing-12) 0; border-bottom: 1px solid var(--color-border); font-size: var(--text-sm); }
+  .breakdown-row.total { font-weight: var(--font-semibold); font-size: var(--text-base); border-bottom: none; padding-top: var(--spacing-16); }
+  .checklist { display: flex; flex-direction: column; gap: var(--spacing-12); margin: var(--spacing-24) 0; }
+  .checklist label { display: flex; gap: var(--spacing-12); font-size: var(--text-sm); align-items: flex-start; padding: var(--spacing-8) 0; cursor: pointer; }
+  .checklist input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--color-accent); flex-shrink: 0; }
+  .side-summary { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-24); position: sticky; top: 84px; }
+  @media (max-width: 860px) { .purchase-layout { grid-template-columns: 1fr; } .side-summary { position: static; } }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="wordmark">Terravue</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="btn-signin" href="login.html">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <p class="breadcrumb" style="margin-top:var(--spacing-24);"><a href="property-detail.html">3 Katha residential plot</a> / Start purchase</p>
+
+      <div class="stepper" style="margin-top:var(--spacing-16);">
+        <div class="stepper-item current"><div class="stepper-bar"></div><span class="stepper-label">1. Review</span></div>
+        <div class="stepper-item"><div class="stepper-bar"></div><span class="stepper-label">2. Verification</span></div>
+        <div class="stepper-item"><div class="stepper-bar"></div><span class="stepper-label">3. Payment</span></div>
+        <div class="stepper-item"><div class="stepper-bar"></div><span class="stepper-label">4. Complete</span></div>
+      </div>
+
+      <h1 class="page-title" style="font-size:var(--text-2xl);">Review your purchase</h1>
+      <p class="page-sub">This starts a purchase request, not an instant transaction. Terravue's team confirms the contract and verifies payment manually before ownership transfer proceeds.</p>
+
+      <div class="summary-row" style="margin-top:var(--spacing-24);">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=300&auto=format&fit=crop" alt="3 Katha residential plot in Bashundhara">
+        <div>
+          <p class="summary-title">3 Katha residential plot</p>
+          <p class="summary-meta">Road 4, Block J, Bashundhara R/A, Dhaka</p>
+        </div>
+      </div>
+
+      <div class="breakdown">
+        <div class="breakdown-row"><span>Agreed price</span><span>৳48,50,000</span></div>
+        <div class="breakdown-row"><span>Advance payment due now (2%)</span><span>৳97,000</span></div>
+        <div class="breakdown-row"><span>Balance on contract signing</span><span>৳47,53,000</span></div>
+        <div class="breakdown-row total"><span>Due today</span><span>৳97,000</span></div>
+      </div>
+
+      <div class="banner banner-info">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        <div>
+          <p class="banner-title">What happens after you continue</p>
+          <p class="banner-body">Your advance payment is held while Terravue's team prepares the sale contract and re-confirms the seller's documents. This usually takes 2–3 business days. You'll be notified the moment it's ready.</p>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <label><input type="checkbox" class="consent-check"> I have inspected this plot in person, or accept the risk of proceeding without an in-person visit.</label>
+        <label><input type="checkbox" class="consent-check"> I understand the advance payment is refundable only if Terravue's verification fails, not if I change my mind.</label>
+        <label><input type="checkbox" class="consent-check"> I agree to Terravue's purchase terms and manual verification process.</label>
+      </div>
+
+      <a id="continue-cta" class="btn btn-primary btn-block" href="purchase-verification.html" aria-disabled="true" style="pointer-events:none; opacity:0.5;">Continue to verification</a>
+      <p id="cta-hint" style="text-align:center; font-size:var(--text-sm); color:var(--color-text-muted); margin-top:var(--spacing-8);">Check all three boxes above to continue.</p>
+
+      <p style="text-align:center; margin-top:var(--spacing-16);"><a style="font-size:var(--text-sm); color:var(--color-info); text-decoration:underline;" href="enquiry.html">Not sure about something? Message Fahim first</a></p>
+    </div>
+  </main>
+
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="wordmark">Terravue</a>
+          <p class="footer-tagline">A trusted property platform for Dhaka — verification earned before purchase, and a straight path from buying land to building on it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="explore.html">Browse properties</a></li>
+            <li><a href="explore.html">Verified listings</a></li>
+            <li><a href="#development">Start a development</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign in</a></li>
+            <li><a href="enquiry.html">Send an enquiry</a></li>
+            <li><a href="purchase-review.html">Start a purchase</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Terravue</a></li>
+            <li><a href="#">How verification works</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Terravue — Dhaka, Bangladesh</p>
+        <p>Case study by Shihab</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const checks = document.querySelectorAll('.consent-check');
+    const cta = document.getElementById('continue-cta');
+    const ctaHint = document.getElementById('cta-hint');
+    function updateCta() {
+      const allChecked = Array.from(checks).every(c => c.checked);
+      cta.style.pointerEvents = allChecked ? 'auto' : 'none';
+      cta.style.opacity = allChecked ? '1' : '0.5';
+      cta.setAttribute('aria-disabled', String(!allChecked));
+      ctaHint.style.display = allChecked ? 'none' : 'block';
+    }
+    checks.forEach(c => c.addEventListener('change', updateCta));
+  </script>
+</body>
+</html>

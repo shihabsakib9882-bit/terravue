@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purchase confirmed — Terravue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .success-icon { width: 56px; height: 56px; border-radius: var(--radius-full); background: var(--color-verified-bg); color: var(--color-verified); display: flex; align-items: center; justify-content: center; margin: var(--spacing-32) auto var(--spacing-16); }
+  .success-icon svg { width: 28px; height: 28px; }
+  .receipt { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-24); margin: var(--spacing-32) 0; }
+  .receipt-row { display: flex; justify-content: space-between; padding: var(--spacing-8) 0; font-size: var(--text-sm); border-bottom: 1px solid var(--color-border); }
+  .receipt-row:last-child { border-bottom: none; }
+  .receipt-row span:first-child { color: var(--color-text-secondary); }
+  .next-card { background: var(--color-primary); color: var(--color-text-on-dark); border-radius: var(--radius-md); padding: var(--spacing-32); margin-top: var(--spacing-32); text-align: center; }
+  .next-card h3 { font-family: var(--font-heading); font-size: var(--text-xl); margin: 0 0 var(--spacing-8); }
+  .next-card p { opacity: 0.85; margin: 0 0 var(--spacing-24); font-size: var(--text-sm); }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="wordmark">Terravue</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="btn-signin" href="login.html">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow" style="text-align:center;">
+      <div class="stepper" style="margin-top:var(--spacing-24); text-align:left;">
+        <div class="stepper-item done"><div class="stepper-bar"></div><span class="stepper-label">1. Review</span></div>
+        <div class="stepper-item done"><div class="stepper-bar"></div><span class="stepper-label">2. Verification</span></div>
+        <div class="stepper-item done"><div class="stepper-bar"></div><span class="stepper-label">3. Payment</span></div>
+        <div class="stepper-item done"><div class="stepper-bar"></div><span class="stepper-label">4. Complete</span></div>
+      </div>
+
+      <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h1 class="page-title" style="text-align:center;">Payment received</h1>
+      <p class="page-sub">We've matched your payment to order #TRV-8842. The seller has been notified and the ownership transfer process begins now.</p>
+
+      <div class="summary-row">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=300&auto=format&fit=crop" alt="3 Katha residential plot in Bashundhara">
+        <div>
+          <p class="summary-title">3 Katha residential plot — ৳48,50,000</p>
+          <p class="summary-meta">Road 4, Block J, Bashundhara R/A, Dhaka</p>
+        </div>
+      </div>
+
+      <div class="receipt" style="text-align:left;">
+        <div class="receipt-row"><span>Property</span><span>3 Katha residential plot, Bashundhara R/A</span></div>
+        <div class="receipt-row"><span>Amount paid</span><span>৳97,000</span></div>
+        <div class="receipt-row"><span>Method</span><span>Bangla QR — Txn BQR2609061147</span></div>
+        <div class="receipt-row"><span>Date</span><span>6 Sep 2026, 11:52 AM</span></div>
+        <div class="receipt-row"><span>Balance remaining</span><span>৳47,53,000, due on final registration</span></div>
+      </div>
+
+      <div style="display:flex; gap:var(--spacing-12); flex-wrap:wrap;">
+        <a class="btn btn-secondary" style="flex:1;" href="#">Download receipt</a>
+        <a class="btn btn-secondary" style="flex:1;" href="#">Download signed contract</a>
+      </div>
+
+      <div class="next-card">
+        <h3>This is becoming your home.</h3>
+        <p>Once registration completes, start planning what gets built here — plot details, a design questionnaire, and a consultation with our development team.</p>
+        <a class="btn" style="background:var(--color-surface); color:var(--color-primary);" href="index.html">Back to Terravue</a>
+      </div>
+    </div>
+  </main>
+
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="wordmark">Terravue</a>
+          <p class="footer-tagline">A trusted property platform for Dhaka — verification earned before purchase, and a straight path from buying land to building on it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="explore.html">Browse properties</a></li>
+            <li><a href="explore.html">Verified listings</a></li>
+            <li><a href="#development">Start a development</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign in</a></li>
+            <li><a href="enquiry.html">Send an enquiry</a></li>
+            <li><a href="purchase-review.html">Start a purchase</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Terravue</a></li>
+            <li><a href="#">How verification works</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Terravue — Dhaka, Bangladesh</p>
+        <p>Case study by Shihab</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

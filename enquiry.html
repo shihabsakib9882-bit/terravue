@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send an enquiry — Terravue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  #enquiry-success { display: none; }
+  .success-icon { width: 56px; height: 56px; border-radius: var(--radius-full); background: var(--color-verified-bg); color: var(--color-verified); display: flex; align-items: center; justify-content: center; margin: var(--spacing-32) auto var(--spacing-16); }
+  .success-icon svg { width: 28px; height: 28px; }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="wordmark">Terravue</a>
+      <nav class="nav-links" aria-label="Primary"><a class="nav-link" href="explore.html">Explore</a><a class="btn-signin" href="login.html">Sign in</a></nav>
+    </div>
+  </header>
+  <main>
+    <div class="container-narrow">
+      <div id="enquiry-form-wrap">
+        <p class="breadcrumb" style="margin-top:var(--spacing-24);"><a href="property-detail.html">3 Katha residential plot</a> / Enquiry</p>
+        <h1 class="page-title" style="font-size:var(--text-2xl);">Send an enquiry</h1>
+        <p class="page-sub">Goes directly to Fahim, the documentation lead on this listing — no phone call needed.</p>
+
+        <div class="summary-row">
+          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=300&auto=format&fit=crop" alt="3 Katha residential plot in Bashundhara">
+          <div>
+            <p class="summary-title">3 Katha residential plot — ৳48,50,000</p>
+            <p class="summary-meta">Road 4, Block J, Bashundhara R/A, Dhaka</p>
+          </div>
+        </div>
+
+        <form id="enquiry-form" novalidate style="margin-top:var(--spacing-24);">
+          <div class="field" data-field="name">
+            <label for="name">Your name</label>
+            <input type="text" id="name" placeholder="Full name">
+            <span class="field-error" hidden>Enter your name.</span>
+          </div>
+          <div class="field" data-field="phone">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" placeholder="01XXXXXXXXX">
+            <span class="field-error" hidden>Enter a phone number so Fahim can reach you.</span>
+          </div>
+          <div class="field" data-field="message">
+            <label for="message">Question about this property</label>
+            <textarea id="message" rows="4" placeholder="e.g. Is the gas line connection already applied for, or would I need to file it myself?"></textarea>
+            <span class="field-error" hidden>Add your question — Fahim needs something to respond to.</span>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">Send enquiry</button>
+        </form>
+      </div>
+
+      <div id="enquiry-success" style="text-align:center; padding-bottom:var(--spacing-64);">
+        <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h1 class="page-title" style="text-align:center;">Enquiry sent</h1>
+        <p class="page-sub">Fahim has received your question about the 3 Katha residential plot in Bashundhara R/A and typically replies within a few hours.</p>
+        <a class="btn btn-secondary" href="property-detail.html">Back to listing</a>
+      </div>
+    </div>
+  </main>
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="wordmark">Terravue</a>
+          <p class="footer-tagline">A trusted property platform for Dhaka — verification earned before purchase, and a straight path from buying land to building on it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="explore.html">Browse properties</a></li>
+            <li><a href="explore.html">Verified listings</a></li>
+            <li><a href="#development">Start a development</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign in</a></li>
+            <li><a href="enquiry.html">Send an enquiry</a></li>
+            <li><a href="purchase-review.html">Start a purchase</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Terravue</a></li>
+            <li><a href="#">How verification works</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Terravue — Dhaka, Bangladesh</p>
+        <p>Case study by Shihab</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('enquiry-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      let valid = true;
+      this.querySelectorAll('.field').forEach(field => {
+        const input = field.querySelector('input, textarea');
+        const hasError = input.value.trim() === '';
+        field.classList.toggle('has-error', hasError);
+        field.querySelector('.field-error').hidden = !hasError;
+        if (hasError) valid = false;
+      });
+      if (!valid) return;
+      document.getElementById('enquiry-form-wrap').style.display = 'none';
+      document.getElementById('enquiry-success').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

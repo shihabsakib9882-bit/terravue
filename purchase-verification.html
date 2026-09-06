@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verification in progress — Terravue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .status-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--spacing-32); margin: var(--spacing-24) 0; }
+  .check-row { display: flex; gap: var(--spacing-16); align-items: flex-start; padding: var(--spacing-16) 0; border-bottom: 1px solid var(--color-border); }
+  .check-row:last-child { border-bottom: none; }
+  .check-icon { width: 28px; height: 28px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .check-icon.done { background: var(--color-verified-bg); color: var(--color-verified); }
+  .check-icon.active { background: var(--color-pending-bg); color: var(--color-pending); }
+  .check-icon.waiting { background: var(--color-border); color: var(--color-text-muted); }
+  .check-icon svg { width: 16px; height: 16px; }
+  .check-title { font-weight: var(--font-medium); font-size: var(--text-base); margin: 0 0 var(--spacing-4); }
+  .check-note { font-size: var(--text-sm); color: var(--color-text-secondary); margin: 0; }
+  .demo-note { border-top: 1px dashed var(--color-border-strong); margin-top: var(--spacing-32); padding-top: var(--spacing-24); text-align: center; }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="wordmark">Terravue</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="btn-signin" href="login.html">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <p class="breadcrumb" style="margin-top:var(--spacing-24);"><a href="property-detail.html">3 Katha residential plot</a> / Verification</p>
+
+      <div class="stepper" style="margin-top:var(--spacing-16);">
+        <div class="stepper-item done"><div class="stepper-bar"></div><span class="stepper-label">1. Review</span></div>
+        <div class="stepper-item current"><div class="stepper-bar"></div><span class="stepper-label">2. Verification</span></div>
+        <div class="stepper-item"><div class="stepper-bar"></div><span class="stepper-label">3. Payment</span></div>
+        <div class="stepper-item"><div class="stepper-bar"></div><span class="stepper-label">4. Complete</span></div>
+      </div>
+
+      <h1 class="page-title" style="font-size:var(--text-2xl);">Your request is under review</h1>
+      <p class="page-sub">Reference #TRV-8842. Submitted 6 Sep, 11:20 AM. Estimated 2–3 business days.</p>
+
+      <div class="summary-row">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=300&auto=format&fit=crop" alt="3 Katha residential plot in Bashundhara">
+        <div>
+          <p class="summary-title">3 Katha residential plot — ৳48,50,000</p>
+          <p class="summary-meta">Road 4, Block J, Bashundhara R/A, Dhaka</p>
+        </div>
+      </div>
+
+      <div class="status-card">
+        <div class="check-row">
+          <span class="check-icon done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <div>
+            <p class="check-title">Purchase request received</p>
+            <p class="check-note">Advance payment of ৳97,000 held, not yet transferred to the seller.</p>
+          </div>
+        </div>
+        <div class="check-row">
+          <span class="check-icon active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <div>
+            <p class="check-title">Re-confirming seller documents</p>
+            <p class="check-note">Our team is re-checking the deed and mutation record against the district land office before drafting the contract.</p>
+          </div>
+        </div>
+        <div class="check-row">
+          <span class="check-icon waiting"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></span>
+          <div>
+            <p class="check-title">Contract drafted and sent for signature</p>
+            <p class="check-note">You'll be notified by SMS and in-app when it's ready to review.</p>
+          </div>
+        </div>
+        <div class="check-row">
+          <span class="check-icon waiting"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+          <div>
+            <p class="check-title">Balance payment</p>
+            <p class="check-note">Due after both parties sign the contract.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="banner banner-info" style="align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--spacing-16);">
+        <div style="display:flex; gap:var(--spacing-12);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          <div>
+            <p class="banner-title">Questions while you wait?</p>
+            <p class="banner-body">Message Fahim, your documentation lead, directly — no need to call.</p>
+          </div>
+        </div>
+        <a class="btn btn-sm" style="flex-shrink:0; background:transparent; border:1px solid var(--color-info); color:var(--color-info);" href="enquiry.html">Message Fahim</a>
+      </div>
+
+      <div class="demo-note">
+        <p class="text-muted" style="font-size:var(--text-sm); margin-bottom:var(--spacing-16);">Case-study note: in the real product this step is asynchronous and can take days — for this walkthrough, continue below as if the contract just arrived.</p>
+        <a class="btn btn-primary btn-block" href="purchase-payment.html">Contract ready — continue to payment</a>
+      </div>
+
+      <p style="text-align:center; margin-top:var(--spacing-16);"><a style="font-size:var(--text-sm); color:var(--color-text-muted); text-decoration:underline;" href="property-detail.html">Cancel this purchase request</a></p>
+    </div>
+  </main>
+
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="wordmark">Terravue</a>
+          <p class="footer-tagline">A trusted property platform for Dhaka — verification earned before purchase, and a straight path from buying land to building on it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="explore.html">Browse properties</a></li>
+            <li><a href="explore.html">Verified listings</a></li>
+            <li><a href="#development">Start a development</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign in</a></li>
+            <li><a href="enquiry.html">Send an enquiry</a></li>
+            <li><a href="purchase-review.html">Start a purchase</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Terravue</a></li>
+            <li><a href="#">How verification works</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Terravue — Dhaka, Bangladesh</p>
+        <p>Case study by Shihab</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

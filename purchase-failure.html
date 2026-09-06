@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment couldn't be verified — Terravue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .error-icon { width: 56px; height: 56px; border-radius: var(--radius-full); background: var(--color-error-bg); color: var(--color-error); display: flex; align-items: center; justify-content: center; margin: var(--spacing-32) auto var(--spacing-16); }
+  .error-icon svg { width: 28px; height: 28px; }
+  .reason-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--spacing-8); text-align: left; }
+  .reason-list li { font-size: var(--text-sm); color: var(--color-text-secondary); padding-left: var(--spacing-16); position: relative; }
+  .reason-list li::before { content: '—'; position: absolute; left: 0; color: var(--color-text-muted); }
+  .other-cases { margin-top: var(--spacing-32); padding-top: var(--spacing-24); border-top: 1px solid var(--color-border); text-align: left; }
+  .case-row { display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-12) 0; font-size: var(--text-sm); }
+  .case-row span:first-child { color: var(--color-text-secondary); }
+  .case-study-note { border-top: 1px dashed var(--color-border-strong); margin-top: var(--spacing-32); padding-top: var(--spacing-24); text-align: left; }
+  .case-study-note > p:first-child { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-muted); font-weight: var(--font-semibold); margin-bottom: var(--spacing-12); }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="wordmark">Terravue</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="btn-signin" href="login.html">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow" style="text-align:center;">
+      <div class="stepper" style="margin-top:var(--spacing-24); text-align:left;">
+        <div class="stepper-item done"><div class="stepper-bar"></div><span class="stepper-label">1. Review</span></div>
+        <div class="stepper-item done"><div class="stepper-bar"></div><span class="stepper-label">2. Verification</span></div>
+        <div class="stepper-item error"><div class="stepper-bar"></div><span class="stepper-label">3. Payment</span></div>
+        <div class="stepper-item"><div class="stepper-bar"></div><span class="stepper-label">4. Complete</span></div>
+      </div>
+
+      <div class="error-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg></div>
+      <h1 class="page-title" style="text-align:center;">We couldn't match this payment</h1>
+      <p class="page-sub">Transaction ID <strong>BQR2609061147</strong> doesn't match a ৳97,000 payment to Terravue's account in the last 30 minutes.</p>
+
+      <div class="summary-row">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=300&auto=format&fit=crop" alt="3 Katha residential plot in Bashundhara">
+        <div>
+          <p class="summary-title">3 Katha residential plot — ৳48,50,000</p>
+          <p class="summary-meta">Road 4, Block J, Bashundhara R/A, Dhaka</p>
+        </div>
+      </div>
+
+      <div class="banner banner-error" style="text-align:left; margin:var(--spacing-24) 0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        <div>
+          <p class="banner-title">This usually happens when:</p>
+          <ul class="reason-list">
+            <li>The Transaction ID was typed with a mistake — check it against your banking app's history.</li>
+            <li>The amount sent didn't exactly match ৳97,000.</li>
+            <li>The payment is still processing on your bank's side — matching can take up to 15 minutes.</li>
+            <li>The payment was sent to a different reference or account.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:var(--spacing-12); flex-wrap:wrap;">
+        <a class="btn btn-primary" style="flex:1;" href="purchase-payment.html">Re-enter Transaction ID</a>
+        <a class="btn btn-secondary" style="flex:1;" href="enquiry.html">Message support</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="container-narrow case-study-note">
+    <p>Case study note — not shown to real users</p>
+    <p style="font-size:var(--text-sm); font-weight:var(--font-semibold); margin-bottom:var(--spacing-8);">Other payment failure states this flow accounts for</p>
+    <div class="case-row"><span>Card declined by issuing bank</span><span class="badge" style="background:var(--color-error-bg); color:var(--color-error);">Card</span></div>
+    <div class="case-row"><span>Bank transfer amount mismatch (short by ৳2,000)</span><span class="badge" style="background:var(--color-error-bg); color:var(--color-error);">Bank</span></div>
+    <div class="case-row"><span>Duplicate payment — same Transaction ID submitted twice</span><span class="badge" style="background:var(--color-error-bg); color:var(--color-error);">QR</span></div>
+    <div class="case-row"><span>Verification window expired (48 hrs, no payment received)</span><span class="badge" style="background:var(--color-error-bg); color:var(--color-error);">Any</span></div>
+  </div>
+
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="wordmark">Terravue</a>
+          <p class="footer-tagline">A trusted property platform for Dhaka — verification earned before purchase, and a straight path from buying land to building on it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="explore.html">Browse properties</a></li>
+            <li><a href="explore.html">Verified listings</a></li>
+            <li><a href="#development">Start a development</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign in</a></li>
+            <li><a href="enquiry.html">Send an enquiry</a></li>
+            <li><a href="purchase-review.html">Start a purchase</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Terravue</a></li>
+            <li><a href="#">How verification works</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Terravue — Dhaka, Bangladesh</p>
+        <p>Case study by Shihab</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
