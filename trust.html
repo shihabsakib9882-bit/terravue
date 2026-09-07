@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How verification works — Terravue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .trust-hero { padding: var(--spacing-64) 0 var(--spacing-32); }
+  .trust-section { padding: var(--spacing-32) 0; border-top: 1px solid var(--color-border); }
+  .trust-section h2 { font-family: var(--font-heading); font-size: var(--text-2xl); margin: 0 0 var(--spacing-16); }
+  .trust-step { display: flex; gap: var(--spacing-16); padding: var(--spacing-16) 0; border-bottom: 1px solid var(--color-border); }
+  .trust-step:last-child { border-bottom: none; }
+  .trust-step-num { flex-shrink: 0; width: 32px; height: 32px; border-radius: var(--radius-full); background: var(--color-primary); color: var(--color-text-on-dark); display: flex; align-items: center; justify-content: center; font-weight: var(--font-semibold); font-size: var(--text-sm); }
+  .trust-step h3 { font-size: var(--text-base); font-weight: var(--font-semibold); margin: 0 0 var(--spacing-4); }
+  .trust-step p { font-size: var(--text-sm); color: var(--color-text-secondary); margin: 0; }
+  .protect-card { background: var(--color-verified-bg); border-radius: var(--radius-md); padding: var(--spacing-24); margin-bottom: var(--spacing-16); }
+  .protect-card h3 { color: var(--color-verified); font-size: var(--text-base); margin: 0 0 var(--spacing-8); display: flex; align-items: center; gap: var(--spacing-8); }
+  .protect-card p { font-size: var(--text-sm); margin: 0; color: var(--color-text-primary); }
+  .company-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-16); }
+  .company-fact dt { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--spacing-4); }
+  .company-fact dd { font-size: var(--text-sm); font-weight: var(--font-medium); margin: 0 0 var(--spacing-16); }
+  @media (max-width: 640px) { .company-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="wordmark">Terravue</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="btn-signin" href="login.html">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-narrow">
+      <div class="trust-hero">
+        <p class="breadcrumb">How verification works</p>
+        <h1 class="page-title" style="font-size:var(--text-3xl);">A green badge is a claim. Here's the proof behind it.</h1>
+        <p class="page-sub">"Verified" on a listing means our team checked it — this page explains who does that checking, what protects your money while a purchase is pending, and how to reach us directly, not just through the website.</p>
+      </div>
+
+      <section class="trust-section" aria-label="What we check on every listing">
+        <h2>What we check before a listing shows "Verified"</h2>
+        <div class="trust-step">
+          <span class="trust-step-num">1</span>
+          <div>
+            <h3>Ownership matches the deed holder's name</h3>
+            <p>We cross-check the registered deed against the name of whoever is listing the property — not just a copy they've sent us.</p>
+          </div>
+        </div>
+        <div class="trust-step">
+          <span class="trust-step-num">2</span>
+          <div>
+            <h3>Mutation record confirmed at the local land office</h3>
+            <p>Deeds change hands; mutation records prove the current government record actually reflects that. We confirm this directly with the district land office, not from a photo the seller sends us.</p>
+          </div>
+        </div>
+        <div class="trust-step">
+          <span class="trust-step-num">3</span>
+          <div>
+            <h3>Litigation check</h3>
+            <p>We check for pending disputes or court cases against the plot as of the check date. This is re-verified again during the manual purchase-verification step, not just once at listing time.</p>
+          </div>
+        </div>
+        <div class="trust-step">
+          <span class="trust-step-num">4</span>
+          <div>
+            <h3>Property tax status</h3>
+            <p>We confirm tax is paid and current — an unpaid tax history is one of the most common hidden problems in informal property deals.</p>
+          </div>
+        </div>
+        <p style="font-size:var(--text-sm); color:var(--color-text-secondary); margin-top:var(--spacing-16);">This covers ownership and paperwork only. It is not a substitute for visiting the plot yourself — we tell every buyer this directly, on every listing.</p>
+      </section>
+
+      <section class="trust-section" aria-label="Who does the checking">
+        <h2>Who's actually doing the checking</h2>
+        <div class="agent-row" style="margin-bottom:0;">
+          <img class="agent-avatar" src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?q=80&w=100&auto=format&fit=crop" alt="Photo of Fahim Islam, Terravue documentation lead">
+          <div>
+            <p class="agent-name">Fahim Islam — Documentation lead</p>
+            <p class="agent-role">Every listing is checked and signed off by a named person, not an automated stamp. You can message the person who verified a specific listing directly from that listing's page.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-section" aria-label="How your advance payment is protected">
+        <h2>What protects your advance payment</h2>
+        <div class="protect-card">
+          <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>Held, not transferred, until the contract is signed</h3>
+          <p>Your advance payment is held by Terravue after you submit it — it is not sent to the seller until the sale contract is signed by both parties and final verification is complete. If verification fails at that stage, the full amount is refunded.</p>
+        </div>
+        <div class="protect-card">
+          <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>Every payment is tied to a specific order</h3>
+          <p>Bank transfers, card payments and Bangla QR payments are all matched to your specific reference number (e.g. #TRV-8842) before they're counted as received — a payment sent without the right reference is flagged, not silently accepted.</p>
+        </div>
+        <p style="font-size:var(--text-sm); color:var(--color-text-secondary);">This is not the same as an instant, automated purchase — that's deliberate. A property purchase this size should have a human checking it at every step, not just a payment confirmation screen.</p>
+      </section>
+
+      <section class="trust-section" aria-label="Reach Terravue directly">
+        <h2>Reach us directly — not just through the website</h2>
+        <dl class="company-grid">
+          <div class="company-fact"><dt>Registered as</dt><dd>Terravue Properties Ltd.</dd></div>
+          <div class="company-fact"><dt>Office</dt><dd>House 14, Road 11, Gulshan-1, Dhaka 1212</dd></div>
+          <div class="company-fact"><dt>Phone</dt><dd>+880 1711-223344</dd></div>
+          <div class="company-fact"><dt>Email</dt><dd>verify@terravue.example</dd></div>
+        </dl>
+        <p style="font-size:var(--text-sm); color:var(--color-text-secondary);">A website that only exists on a screen shouldn't be trusted with a decision this size on its own — the same way you'd visit a plot in person, you're welcome to visit our office before you send a payment.</p>
+      </section>
+
+      <div style="text-align:center; padding: var(--spacing-32) 0 var(--spacing-64);">
+        <a class="btn btn-primary" href="explore.html">Browse verified properties</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="wordmark">Terravue</a>
+          <p class="footer-tagline">A trusted property platform for Dhaka — verification earned before purchase, and a straight path from buying land to building on it.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="explore.html">Browse properties</a></li>
+            <li><a href="explore.html">Verified listings</a></li>
+            <li><a href="#development">Start a development</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign in</a></li>
+            <li><a href="enquiry.html">Send an enquiry</a></li>
+            <li><a href="purchase-review.html">Start a purchase</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Terravue</a></li>
+            <li><a href="trust.html">How verification works</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Terravue — Dhaka, Bangladesh</p>
+        <p>Proposal by Shihab</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
