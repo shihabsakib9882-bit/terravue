@@ -31,8 +31,9 @@
   --color-text-muted: #6E6B60;
   --color-text-on-dark: #F7F3EC;
 
-  --font-heading: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  /* Noto Sans Bengali is loaded as the ৳ glyph only, so every other character falls through */
+  --font-heading: 'Noto Sans Bengali', 'Fraunces', Georgia, serif;
+  --font-body: 'Noto Sans Bengali', 'Inter', system-ui, sans-serif;
   --text-display: clamp(2rem, 1.1rem + 3.8vw, 4.5rem);
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
